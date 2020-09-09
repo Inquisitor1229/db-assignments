@@ -280,9 +280,8 @@ async function task_1_12(db) {
 async function task_1_13(db) {
     let result = await db.query(`
         SELECT
-	        (SELECT COUNT(ProductName)) AS "TotalOfCurrentProducts",
-	        (SELECT SUM(Discontinued)) AS "TotalOfDiscontinuedProducts"
-        FROM Products;
+            (SELECT COUNT(ProductName) FROM Products) AS "TotalOfCurrentProducts",
+            (SELECT COUNT(Discontinued) FROM Products WHERE Discontinued) AS "TotalOfDiscontinuedProducts"
     `);
     
     return result[0];
