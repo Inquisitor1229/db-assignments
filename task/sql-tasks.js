@@ -202,7 +202,7 @@ async function task_1_9(db) {
             CustomerID,
             ContactName
         FROM Customers
-        WHERE ContactName LIKE "F%__n%"
+        WHERE ContactName LIKE "F%_n%"
     `);
 
     return result[0];
@@ -284,6 +284,7 @@ async function task_1_13(db) {
 	        (SELECT SUM(Discontinued)) AS "TotalOfDiscontinuedProducts"
         FROM Products;
     `);
+    
     return result[0];
 }
 
