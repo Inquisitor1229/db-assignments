@@ -202,7 +202,7 @@ async function task_1_9(db) {
             CustomerID,
             ContactName
         FROM Customers
-        WHERE ContactName LIKE "F%_n%"
+        WHERE ContactName LIKE "F__n%"
     `);
 
     return result[0];
